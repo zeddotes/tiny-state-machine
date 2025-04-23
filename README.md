@@ -36,6 +36,8 @@ npm run dev
 - `npm run preview`: Preview the production build locally
 - `npm test`: Run tests with Vitest
 - `npm run coverage`: Run tests with coverage reporting
+- `npm run lint`: Check code for style issues
+- `npm run lint:fix`: Automatically fix linting issues
 
 ## Features
 
@@ -52,6 +54,30 @@ The application uses a two-layer state machine approach:
 2. `ModuloThreeFSM` - A specific implementation that calculates modulo 3 of binary numbers
 
 The FSM works by tracking the remainder as it processes each digit of the binary number from left to right.
+
+## Technical Notes
+
+### React JSX Transform
+
+This project uses the modern JSX transform introduced in React 17+. This means:
+
+- No need to import React in files that only use JSX
+- The TypeScript configuration uses `"jsx": "react-jsx"` to enable this feature
+- ESLint is configured to support this syntax
+
+### Testing
+
+The project includes comprehensive test coverage using:
+- Vitest for test running and assertions
+- React Testing Library for component testing
+- Jest DOM for DOM testing utilities
+
+### Linting
+
+ESLint is configured with:
+- TypeScript support via `@typescript-eslint`
+- React specific rules via `eslint-plugin-react`
+- Modern config format using `eslint.config.js`
 
 ## Author
 
